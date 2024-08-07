@@ -1,0 +1,25 @@
+{
+    "plugins": [
+        {
+            "name": "@zeplin/cli-connect-react-plugin",
+            "config": {
+                "url": "http://localhost:6006",
+                "startScript": "yarn storybook"
+            }
+        },
+        {
+            "name": "zeplin-plugin-storybook"
+        }
+        
+    ],
+    "projects": [],
+    "styleguides": [
+        "662a7cb7cdce0eb321be4f68"
+    ],
+    "components": [
+        {
+            "path": [],
+            "zeplinIds": []
+        }
+    ]
+}

@@ -25,6 +25,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@vercel/flags": "^2.6.0",
     "prop-types": "^15.8.1",
     "sharp": "^0.33.4"
   }

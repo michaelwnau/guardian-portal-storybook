@@ -135,3 +135,5 @@ dist
 
 *storybook.log
 # .vercel
+
+.vercel
