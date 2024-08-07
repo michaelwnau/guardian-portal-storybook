@@ -6,7 +6,7 @@
    \ \_______\ \_______\ \__\ \__\ \__\\ _\\ \_______\ \__\ \__\ \__\ \__\\ \__\       \ \__\    \ \_______\ \__\\ _\    \ \__\ \ \__\ \__\ \_______\
     \|_______|\|_______|\|__|\|__|\|__|\|__|\|_______|\|__|\|__|\|__|\|__| \|__|        \|__|     \|_______|\|__|\|__|    \|__|  \|__|\|__|\|_______|
                                                                                                                                                                                                                                                                                                     
-                                                                                                                                                      
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/guardian-portal-storybook?style=for-the-badge)                                                                                                                                                      
 # guardian-portal-storybook
 
 https://vercel.com/guides/storybook-with-vercel
