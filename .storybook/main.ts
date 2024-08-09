@@ -12,7 +12,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@chromatic-com/storybook',
     '@storybook/addon-interactions',
-    '@storybook/react-docgen-typescript-plugin',
+    '@storybook/addon-docs',
   ],
   framework: {
     name: '@storybook/nextjs',
@@ -23,7 +23,15 @@ const config: StorybookConfig = {
     checkOptions: {},
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
-      tsconfigPath: './tsconfig.json',
+      // Provide the path to your tsconfig.json so that your stories can
+      // display types from outside each individual story.
+      tsconfigPath: path.resolve(__dirname, "../tsconfig.json"),
+      propFilter: (prop) => {
+        if (prop.parent) {
+          return !prop.parent.fileName.includes('node_modules')
+        }
+        return true
+      },
     },
   },
   webpackFinal: async (config) => {
