@@ -1,0 +1,4 @@
+   packageExtensions:
+     "@storybook/nextjs@*":
+       peerDependencies:
+         webpack: "*"

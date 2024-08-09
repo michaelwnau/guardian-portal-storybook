@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/nextjs';
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: [
@@ -29,7 +30,12 @@ const config: StorybookConfig = {
     builder: '@storybook/builder-webpack5',
   },
   webpackFinal: async (config) => {
-    // Custom webpack configuration if needed
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'next/dist/shared/lib/router-context': 'next/dist/shared/lib/router-context.shared-runtime',
+      };
+    }
     return config;
   },
 };
