@@ -1,1 +1,15 @@
-{"projectId":"prj_3ECx72jMWB57sv4TwDBdKsmEUlH5","orgId":"team_kIZQO1IvNssUcHCl68xX1S2I"}
+{
+  "projectId": "prj_3ECx72jMWB57sv4TwDBdKsmEUlH5",
+  "orgId": "team_kIZQO1IvNssUcHCl68xX1S2I",
+  "settings": {
+    "createdAt": 1723048960664,
+    "framework": "storybook",
+    "devCommand": null,
+    "installCommand": "yarn install",
+    "buildCommand": "yarn build-storybook",
+    "outputDirectory": "./storybook-static",
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "20.x"
+  }
+}
