@@ -12,7 +12,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@chromatic-com/storybook',
     '@storybook/addon-interactions',
-    'storybook-zeplin/register',
+    '@storybook/react-docgen-typescript-plugin',
   ],
   framework: {
     name: '@storybook/nextjs',
@@ -26,14 +26,14 @@ const config: StorybookConfig = {
       tsconfigPath: './tsconfig.json',
     },
   },
-  core: {
-    builder: '@storybook/builder-webpack5',
-  },
   webpackFinal: async (config) => {
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
         'next/dist/shared/lib/router-context': 'next/dist/shared/lib/router-context.shared-runtime',
+        'next/dist/shared/lib/head-manager-context': 'next/dist/shared/lib/head-manager-context.shared-runtime',
+        'next/dist/shared/lib/app-router-context': 'next/dist/shared/lib/app-router-context.shared-runtime',
+        'next/dist/shared/lib/hooks-client-context': 'next/dist/shared/lib/hooks-client-context.shared-runtime',
       };
     }
     return config;
