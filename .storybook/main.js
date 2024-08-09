@@ -11,6 +11,7 @@ const config = {
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
     "storybook-zeplin/register",
+    "storybook-addon-mock",
   ],
   framework: {
     name: "@storybook/nextjs",

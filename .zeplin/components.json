@@ -1,25 +1,40 @@
 {
-    "plugins": [
-        {
-            "name": "@zeplin/cli-connect-react-plugin",
-            "config": {
-                "url": "http://localhost:6006",
-                "startScript": "yarn storybook"
-            }
-        },
-        {
-            "name": "zeplin-plugin-storybook"
-        }
-        
-    ],
-    "projects": [],
-    "styleguides": [
-        "662a7cb7cdce0eb321be4f68"
-    ],
-    "components": [
-        {
-            "path": [],
-            "zeplinIds": []
-        }
-    ]
+  "plugins": [
+    {
+      "name": "@zeplin/cli-connect-react-plugin"
+    },
+    {
+      "name": "@zeplin/cli-connect-storybook-plugin",
+      "config": {
+        "url": "http://localhost:6006/",
+        "format": "new"
+      }
+    }
+  ],
+  "projects": [
+    "669aa99836c7f2ad93ce967a"
+  ],
+  "components": [
+    {
+      "path": "stories\\EventCard.stories.js",
+      "zeplinIds": [
+        "662a85117c9fd0c434378664"
+      ]
+    },
+    {
+      "path": "stories\\EventCard.stories.js",
+      "zeplinIds": [
+        "669ec6166c473213677c01ae"
+      ]
+    },
+    {
+      "path": [],
+      "zeplinIds": [
+        ""
+      ]
+    }
+  ],
+  "github": {
+    "repository": "michaelwnau/guardian-portal-storybook"
+  }
 }
