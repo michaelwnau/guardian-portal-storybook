@@ -24,6 +24,7 @@
     "@storybook/react-webpack5": "^8.2.8",
     "@storybook/test": "^8.2.8",
     "storybook": "^8.2.8",
+    "typescript": "^5.5.4",
     "webpack": "^5"
   },
   "resolutions": {
