@@ -1,1 +1,0 @@
-This folder contains all the components used in the app and will replicate the folder structure seen in the design system.
