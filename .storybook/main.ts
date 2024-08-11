@@ -1,12 +1,19 @@
 import type { StorybookConfig } from '@storybook/nextjs';
-import { ExtrasConfig } from '@storybook-extras/preset';
 import path from 'path';
 
-const config: StorybookConfig & ExtrasConfig = {
+const config: StorybookConfig = {
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
+  },
+
   stories: [
     '../stories/**/*.mdx',
     '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
+
+  staticDirs: ['../public'],
+
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-links',
@@ -14,26 +21,8 @@ const config: StorybookConfig & ExtrasConfig = {
     '@chromatic-com/storybook',
     '@storybook/addon-interactions',
     '@storybook/addon-docs',
-    '@storybook-extras/preset',
   ],
 
-  "extras": {
-    "swagger": {
-      "stories": [
-        {
-          // "title": "Swagger UI",
-          // "url": 'https://guardian-portal-storybook.vercel.app/v2/swagger.json',
-          // "path": "../stories/swagger",
-          // "titlePrefix": "Swagger",
-        },
-      ]
-    },
-  },
-
-  framework: {
-    name: '@storybook/nextjs',
-    options: {},
-  },
   typescript: {
     check: false,
     checkOptions: {},
