@@ -10,8 +10,10 @@ const config = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
+    "storybook-zeplin",
     "storybook-zeplin/register",
     "storybook-addon-mock",
+    "@chromatic-com/storybook",
   ],
   framework: {
     name: "@storybook/nextjs",
