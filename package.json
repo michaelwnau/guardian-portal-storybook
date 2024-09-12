@@ -1,21 +1,12 @@
 {
-  "packageManager": "yarn@4.4.1",
+  "packageManager": "yarn@1.22.22",
   "devDependencies": {
-    "@chromatic-com/storybook": "^2.0.1",
-    "@storybook/addon-actions": "^8.3.0",
-    "@storybook/addon-backgrounds": "^8.3.0",
-    "@storybook/addon-controls": "^8.3.0",
+    "@chromatic-com/storybook": "^1.6.1",
     "@storybook/addon-essentials": "^8.2.8",
     "@storybook/addon-interactions": "^8.2.8",
     "@storybook/addon-links": "^8.2.8",
-    "@storybook/addon-measure": "^8.3.0",
     "@storybook/addon-onboarding": "^8.2.8",
-    "@storybook/addon-outline": "^8.3.0",
-    "@storybook/addon-toolbars": "^8.3.0",
-    "@storybook/addon-viewport": "^8.3.0",
     "@storybook/blocks": "^8.2.8",
-    "@storybook/global": "^5.0.0",
-    "@storybook/instrumenter": "^8.3.0",
     "@storybook/manager-api": "^8.2.8",
     "@storybook/nextjs": "^8.2.8",
     "@storybook/react": "^8.2.8",
@@ -24,20 +15,14 @@
     "@zeplin/cli": "2.0.2",
     "@zeplin/cli-connect-react-plugin": "1.1.2",
     "@zeplin/cli-connect-storybook-plugin": "2.0.0",
-    "@zeplin/sdk": "^1.23.0",
-    "@zeplin/storybook-inspector": "^0.3.0",
-    "filesize": "^10.1.6",
     "next": "^14.2.5",
-    "polished": "^4.3.1",
     "react": "^18.3.1",
-    "react-confetti": "^6.1.0",
     "react-dom": "^18.3.1",
-    "semver": "^7.6.3",
     "storybook": "^8.2.8",
     "storybook-zeplin": "^3.0.0",
     "strip-ansi": "^7.1.0",
     "typescript": "^5.5.4",
-    "webpack": "^5.93.0"
+    "webpack": "^5"
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
@@ -47,11 +32,9 @@
   },
   "dependencies": {
     "@vercel/flags": "^2.6.0",
-    "axios": "^1.7.7",
-    "joi": "^17.13.3",
     "prop-types": "^15.8.1",
     "sharp": "^0.33.4",
     "storybook-addon-react-docgen": "^1.2.44",
-    "vercel": "^37.4.2"
+    "vercel": "^35.2.3"
   }
 }
