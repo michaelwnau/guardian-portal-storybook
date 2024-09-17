@@ -137,3 +137,5 @@ dist
 # .vercel
 
 .vercel
+
+package-lock.json

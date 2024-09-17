@@ -1,6 +1,8 @@
 {
   "name": "guardian-portal-storybook",
-  "packageManager": "yarn@4.4.0",
+  "description": "Storybook for Guardian Portal",
+  "license": "Apache-2.0",
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
@@ -28,7 +30,9 @@
     "@storybook/react-docgen-typescript-plugin": "^1.0.1",
     "@storybook/react-webpack5": "^8.2.8",
     "@storybook/test": "8.2.8",
+    "prettier": "^3.3.3",
     "storybook": "^8.2.8",
+    "storybook-addon-mock": "^5.0.0",
     "storybook-zeplin": "^3.0.0",
     "typescript": "^5.5.4",
     "webpack": "^5"
