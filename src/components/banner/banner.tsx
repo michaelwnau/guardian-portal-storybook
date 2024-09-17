@@ -16,12 +16,13 @@ import {
 const Banner: React.FC<{ data: BannerData }> = ({ data }) => {
   const missionEmpty = !data.missionText || validator.isEmpty(data.missionText)
   const visionEmpty = !data.visionText || validator.isEmpty(data.visionText)
+  const logoEmpty = !data.logoSrc || validator.isEmpty(data.logoSrc)
 
   return (
     <Box sx={container}>
       <Grid container alignItems='center'>
         <Grid item xs={12} md={8} sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
-          <Box component='img' src={data.logoSrc} alt={data.logoAlt} sx={logo} />
+          {!logoEmpty ? <Box component='img' src={data.logoSrc} alt={data.logoAlt} sx={logo} /> : null}
           <Box sx={{ whiteSpace: 'pre-wrap', textAlign: 'left' }}>
             <Typography variant='h4' sx={bannerTitle}>
               {data.title}

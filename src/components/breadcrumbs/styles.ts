@@ -15,7 +15,7 @@ export const link = {
   fontWeight: 'normal',
   fontStretch: 'normal',
   fontStyle: 'normal',
-  lineHeight: 1.5,
+  lineHeight: 3.5,
   letterSpacing: '0.05px',
   textAlign: 'left',
   textDecoration: 'none',

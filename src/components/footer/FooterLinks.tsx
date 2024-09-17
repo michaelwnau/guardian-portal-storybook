@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Typography, Link, Grid } from '@mui/material'
 import { FooterLink } from '@/types'
-import { content, contentTitle } from './style'
+import { content, contentTitle, marginTop12, link, padRightMedium } from './style'
 
 interface FooterLinksProps {
   title: string
@@ -13,29 +13,35 @@ const FooterLinks: React.FC<FooterLinksProps> = ({ title, links }) => {
   const column1 = links.slice(0, 5)
   const column2 = links.slice(5, 10)
 
+  const linksColumn = (column: FooterLink[]) => {
+    return column
+      .filter((linkItem) => !linkItem.hidden)
+      .map((linkItem) => (
+        <Typography key={linkItem.url} style={content}>
+          <Link
+            href={linkItem.url}
+            target={linkItem.openInNew ? '_blank' : '_self'}
+            color='inherit'
+            underline='none'
+            sx={link}
+          >
+            {linkItem.name}
+          </Link>
+        </Typography>
+      ))
+  }
+
   return (
     <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%'>
       <Typography variant='h6' gutterBottom style={contentTitle}>
         {title}
       </Typography>
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          {column1.map((link) => (
-            <Typography key={link.url} style={content}>
-              <Link href={link.url} target={link.openInNew ? '_blank' : '_self'} color='inherit' underline='none'>
-                {link.name}
-              </Link>
-            </Typography>
-          ))}
+      <Grid container spacing={0} sx={marginTop12}>
+        <Grid item xs={6} sx={padRightMedium}>
+          {linksColumn(column1)}
         </Grid>
         <Grid item xs={6}>
-          {column2.map((link) => (
-            <Typography key={link.url} style={content}>
-              <Link href={link.url} target={link.openInNew ? '_blank' : '_self'} color='inherit' underline='none'>
-                {link.name}
-              </Link>
-            </Typography>
-          ))}
+          {linksColumn(column2)}
         </Grid>
       </Grid>
     </Box>

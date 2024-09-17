@@ -1,10 +1,10 @@
 // src/components/events.tsx
 'use client'
 import React, { useState } from 'react'
-import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
-import CustomIndicator from '@/components/announcements/customindicator'
+import { Box, Card, CardActionArea, CardContent, CardMedia, Pagination, Typography } from '@mui/material'
 import { Article } from '@/types'
-import { title } from '@/components/globalstyles'
+import spacing from '@/design-tokens/spacing'
+import SectionTitle from '@/components/SectionTitle'
 
 interface EventsProps {
   data: Article[]
@@ -29,15 +29,14 @@ const Events: React.FC<EventsProps> = ({ data }) => {
 
   return (
     <Box sx={{ padding: '0px' }}>
-      <Typography variant='h6' sx={title}>
-        Base Events
-      </Typography>
+      <SectionTitle>Base Events</SectionTitle>
       {currentCards.length > 0 ? (
         <Box
           sx={{
             display: 'flex',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
+            paddingBottom: spacing.spacing.ml,
           }}
         >
           {currentCards.map((card, index) => (
@@ -67,11 +66,9 @@ const Events: React.FC<EventsProps> = ({ data }) => {
       ) : (
         <Typography>No events available</Typography>
       )}
-      <CustomIndicator
-        length={Math.ceil(data.length / cardsPerPage)}
-        activeIndex={page}
-        onClick={(index) => handleChange(undefined, index)}
-      />
+      <Box display='flex' justifyContent='center' sx={{ marginTop: '2em', marginBottom: '2em' }}>
+        <Pagination defaultPage={1} count={data.length} onChange={handleChange} />
+      </Box>
     </Box>
   )
 }

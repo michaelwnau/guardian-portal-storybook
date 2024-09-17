@@ -19,9 +19,23 @@ export const footerContentStyle = {
 export const contentTitle = {
   fontFamily: 'IBM Plex Mono',
   fontSize: '12px',
+  lineHeight: '16px',
 }
 
 export const content = {
   fontSize: '8px',
+  lineHeight: '16px',
   fontFamily: 'IBM Plex Mono',
+}
+
+export const link = {
+  paddingLeft: '0px',
+}
+
+export const padRightMedium = {
+  paddingRight: spacing.spacing.m,
+}
+
+export const marginTop12 = {
+  marginTop: '12px',
 }

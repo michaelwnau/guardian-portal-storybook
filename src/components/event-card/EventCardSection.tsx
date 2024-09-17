@@ -1,10 +1,10 @@
 'use client'
 
 import EventCard from '@/components/event-card/EventCard'
-import CustomIndicator from '@/components/announcements/customindicator'
 import React, { useState, useEffect, useRef } from 'react'
-import { Box } from '@mui/material'
+import { Box, Pagination } from '@mui/material'
 import { Article } from '@/types'
+import SectionTitle from '@/components/SectionTitle'
 
 export interface EventItem {
   id: string
@@ -21,7 +21,6 @@ interface EventCardSectionProps {
 export default function EventCardSection({ eventItems, minCardHeight }: EventCardSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [visibleCards, setVisibleCards] = useState<Article[]>([])
-  const [totalPages, setTotalPages] = useState(1)
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -32,7 +31,6 @@ export default function EventCardSection({ eventItems, minCardHeight }: EventCar
         const startIndex = activeIndex * cardsPerPage
         const endIndex = Math.min(startIndex + cardsPerPage, eventItems.length)
         setVisibleCards(eventItems.slice(startIndex, endIndex))
-        setTotalPages(Math.ceil(eventItems.length / cardsPerPage))
       }
     }
 
@@ -41,18 +39,21 @@ export default function EventCardSection({ eventItems, minCardHeight }: EventCar
     return () => window.removeEventListener('resize', updateVisibleCards)
   }, [eventItems, minCardHeight, activeIndex])
 
-  const handleIndicatorClick = (index: number) => {
-    setActiveIndex(index - 1)
+  const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setActiveIndex(value)
   }
 
   return (
     <>
+      <SectionTitle>Events</SectionTitle>
       <Box ref={containerRef} sx={{ display: 'flex', flexDirection: 'column', gap: 2, height: '100%' }}>
         {visibleCards.map((item) => (
           <EventCard key={item.id} article={item} />
         ))}
       </Box>
-      <CustomIndicator length={totalPages} activeIndex={activeIndex + 1} onClick={handleIndicatorClick} />
+      <Box display='flex' justifyContent='center' sx={{ marginTop: '2em' }}>
+        <Pagination defaultPage={1} count={visibleCards.length} onChange={handleChange} />
+      </Box>
     </>
   )
 }

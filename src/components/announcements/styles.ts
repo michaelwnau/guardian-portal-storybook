@@ -1,3 +1,5 @@
+import spacing from '@/design-tokens/spacing'
+
 export const containerStyles = {
   alignSelf: 'stretch',
   flexGrow: 0,
@@ -35,4 +37,5 @@ export const title = {
   lineHeight: 'normal',
   letterSpacing: 'normal',
   textAlign: 'left',
+  marginBottom: spacing.spacing.ml,
 }

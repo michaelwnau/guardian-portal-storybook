@@ -1,0 +1,533 @@
+.card.large .card-enabled-large {
+  width: 383px;
+  height: 583px;
+  padding: 0 4px 5px;
+}
+
+.card.large .stateenabled-sizelarge {
+  width: 375px;
+  height: 578px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  box-shadow:
+    0 1px 3px 1px rgba(0, 0, 0, 0.15),
+    0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card.large .cardMedia {
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.card.large .replaceImage {
+  width: 375px;
+  height: 358px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.card.large .strokeShape {
+  width: 375px;
+  height: 358px;
+}
+
+.card.large .cardContent {
+  height: 220px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 16px;
+  background-color: #f2f2f2;
+}
+
+.card.large .line1 {
+  height: 36px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0;
+}
+
+.card.large .header1 {
+  width: 147px;
+  height: 36px;
+  flex-grow: 0;
+  font-family: 'LibreFranklin', sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1c1d;
+}
+
+.card.large .headerBodyText {
+  height: 20px;
+  flex-grow: 1;
+  font-family: 'LibreFranklin', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1c1d;
+}
+
+.card.large .subText {
+  height: 16px;
+  flex-grow: 1;
+  font-family: 'LibreFranklin', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1c1d;
+}
+
+.card.large .instanceSlots {
+  height: 36px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.card.large .Instance-Slot {
+  width: 616px;
+  height: 20px;
+  flex-grow: 0;
+  font-family: 'LibreFranklin', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: 0.25px;
+  text-align: center;
+  color: #425464;
+}
+
+.card.large .instance-Slot {
+  width: 632px;
+  height: 36px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border: solid 1px #425464;
+}
+
+.card.large .callToAction {
+  height: 48px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+}
+
+.card.large .call-to-action {
+  width: 116px;
+  height: 16px;
+  flex-grow: 0;
+  font-family: 'IBMPlexMono', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: left;
+  color: #425464;
+}
+
+.card.large .icon {
+  width: 48px;
+  height: 48px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.card.large img.ArrowForwardFilled {
+  width: 20px;
+  height: 20px;
+  flex-grow: 0;
+  object-fit: contain;
+}
+
+/* card.small_wide */
+.card.small_wide .card-enabled-small_wide {
+  width: 383px;
+  height: 366px;
+  padding: 3px 4px 5px;
+}
+
+.card.small_wide .stateenabled-sizesmall_wide {
+  width: 375px;
+  height: 358px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  box-shadow:
+    0 1px 3px 1px rgba(0, 0, 0, 0.15),
+    0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card.small_wide .cardMedia {
+  width: 375px;
+  height: 358px;
+  flex-grow: 0;
+  padding: 138px 0 0;
+}
+
+.card.small_wide .replaceImage {
+  width: 375px;
+  height: 358px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.card.small_wide .strokeShape {
+  width: 375px;
+  height: 358px;
+  padding: 138px 0 0;
+}
+
+.card.small_wide .cardContent {
+  height: 220px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 16px;
+  background-color: #f2f2f2;
+}
+
+.card.small_wide .line1 {
+  height: 36px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0;
+}
+
+.card.small_wide .header1 {
+  width: 147px;
+  height: 36px;
+  flex-grow: 0;
+  font-family: 'LibreFranklin', sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1c1d;
+}
+
+.card.small_wide .headerBodyText {
+  height: 20px;
+  flex-grow: 1;
+  font-family: 'LibreFranklin', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1c1d;
+}
+
+.card.small_wide .subText {
+  height: 16px;
+  flex-grow: 1;
+  font-family: 'LibreFranklin', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1c1d;
+}
+
+.card.small_wide .instanceSlots {
+  height: 36px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.card.small_wide .instance-Slot {
+  width: 632px;
+  height: 36px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border: solid 1px #425464;
+  font-family: 'LibreFranklin', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: 0.25px;
+  text-align: center;
+  color: #425464;
+}
+
+.card.small_wide .callToAction {
+  height: 48px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+}
+
+.card.small_wide .call-to-action {
+  width: 116px;
+  height: 16px;
+  flex-grow: 0;
+  font-family: 'IBMPlexMono', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: left;
+  color: #425464;
+}
+
+.card.small_wide .icon {
+  width: 48px;
+  height: 48px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.card.small_wide img.ArrowForwardFilled {
+  width: 20px;
+  height: 20px;
+  flex-grow: 0;
+  object-fit: contain;
+}
+
+/* card.medium */
+.card.medium .card-enabled-medium {
+  width: 383px;
+  height: 245px;
+  padding: 0 4px 5px;
+}
+
+.card.medium .stateenabled-sizemedium {
+  width: 375px;
+  height: 240px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  box-shadow:
+    0 1px 3px 1px rgba(0, 0, 0, 0.15),
+    0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card.medium .cardMedia {
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.card.medium .replaceImage {
+  width: 187.5px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.card.medium .strokeShape {
+  width: 187.5px;
+  height: 240px;
+  border: solid 1px #162028;
+}
+
+.card.medium .cardContent {
+  align-self: stretch;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 16px;
+  background-color: #f2f2f2;
+}
+
+.card.medium .line1 {
+  height: 36px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0;
+}
+
+.card.medium .header1 {
+  width: 147px;
+  height: 36px;
+  flex-grow: 0;
+  font-family: 'LibreFranklin', sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1c1d;
+}
+
+.card.medium .headerBodyText {
+  height: 20px;
+  flex-grow: 1;
+  font-family: 'LibreFranklin', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1c1d;
+}
+
+.card.medium .subText {
+  height: 16px;
+  flex-grow: 1;
+  font-family: 'LibreFranklin', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1b1c1d;
+}
+
+.card.medium .callToAction {
+  height: 48px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+}
+
+.card.medium .call-to-action {
+  width: 116px;
+  height: 16px;
+  flex-grow: 0;
+  font-family: 'IBMPlexMono', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: left;
+  color: #425464;
+}
+
+.card.medium .icon {
+  width: 48px;
+  height: 48px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.card.medium img.ArrowForwardFilled {
+  width: 20px;
+  height: 20px;
+  flex-grow: 0;
+  object-fit: contain;
+}

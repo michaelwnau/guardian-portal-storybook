@@ -1,3 +1,5 @@
+import spacing from '@/design-tokens/spacing'
+
 export const title = {
   fontFamily: 'Libre Franklin, sans-serif',
   color: '#526474',
@@ -8,4 +10,5 @@ export const title = {
   lineHeight: 'normal',
   letterSpacing: 'normal',
   textAlign: 'left',
+  paddingBottom: spacing.spacing.ml,
 }

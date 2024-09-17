@@ -30,7 +30,9 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ data }) => {
           src={getProxiedImageUrl(images[activeIndex].source)}
           alt={images[activeIndex].title}
           fill={true}
-          style={{ objectFit: 'cover' }}
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+          priority
+          style={{ objectFit: 'fill' }}
         />
       </Box>
       <Box sx={styles.textOverlay}>
@@ -46,6 +48,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ data }) => {
                 src={getProxiedImageUrl(image.source)}
                 alt={`thumbnail ${index}`}
                 fill={true}
+                sizes='(max-width: 768px) 25vw, 10vw'
                 style={{ ...getImageStyle(index, activeIndex), objectFit: 'cover' }}
               />
             </Box>

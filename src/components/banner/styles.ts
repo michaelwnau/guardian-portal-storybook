@@ -1,6 +1,8 @@
 import spacing from '@/design-tokens/spacing'
+import colors from '@/design-tokens/colors'
+
 export const container = {
-  backgroundColor: 'white',
+  backgroundColor: colors.m3SysLightInverseOnSurface,
   color: 'black',
   paddingRight: spacing.padding.m,
   paddingLeft: spacing.padding.m,

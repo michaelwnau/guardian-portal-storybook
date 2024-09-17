@@ -4,12 +4,12 @@ import { Grid, Typography, Box, Link } from '@mui/material'
 import { Facebook, Instagram, YouTube } from '@mui/icons-material'
 import X from '@mui/icons-material/X' // Import X icon
 import { FooterData } from '@/types'
-import { content, contentTitle, footerContentStyle } from './style'
+import { content, contentTitle, footerContentStyle, link, padRightMedium, marginTop12 } from './style'
 import FooterLinks from './FooterLinks'
-import DOMPurify from 'dompurify'
+import DOMPurify from 'isomorphic-dompurify'
 
 const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
-  const informationText = data.informationText.split('\n')
+  const informationText = data.informationText ? data.informationText.split('\n') : []
   const addressText = encodeURIComponent(data.streetAddress + ', ' + data.city + ', ' + data.state + ' ' + data.zip)
   const addressHref = `https://www.google.com/maps/search/?api=1&query=${addressText}`
   const currentYear = new Date().getFullYear().toString()
@@ -20,15 +20,67 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
     setHtmlContent(safeFeedback)
   }, [data])
 
-  let baseMap = <Box />
+  let image = <Box />
   if (data.default === false) {
-    baseMap = (
+    image = (
       <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%'>
         <Typography variant='h6' gutterBottom sx={contentTitle}>
-          Base Map
+          {data.imageDescription}
         </Typography>
-        <Box component='img' src={data.baseMapImage} width='100%' height='auto' alt='Base Map' />
+        <Box component='img' src={data.image} width='100%' height='auto' alt={data.imageDescription} sx={marginTop12} />
       </Box>
+    )
+  }
+
+  let location = <Box />
+
+  if (data.hasLocation) {
+    location = (
+      <Grid item>
+        <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%'>
+          <Typography variant='h6' gutterBottom sx={contentTitle}>
+            Location
+          </Typography>
+          <Link href={addressHref} target='_blank' color='inherit' underline='none' sx={link}>
+            <Typography flexGrow={1} sx={[content, marginTop12]}>
+              {data.streetAddress}
+            </Typography>
+            <Grid container spacing={0} sx={marginTop12}>
+              <Grid item>
+                <Typography flexGrow={1} sx={[content, padRightMedium]}>
+                  {data.city}
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography flexGrow={1} sx={[content, padRightMedium]}>
+                  {data.state}
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography flexGrow={1} sx={[content]}>
+                  {data.zip}
+                </Typography>
+              </Grid>
+            </Grid>
+          </Link>
+          <Grid container spacing={0} sx={marginTop12}>
+            <Grid item>
+              <Typography flexGrow={1} sx={[content, padRightMedium]}>
+                <Link href={`mailto:${data.email}`} color='inherit' underline='none' sx={link}>
+                  {data.email}&nbsp;
+                </Link>
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography flexGrow={1} sx={[content]}>
+                <Link href={`tel:${data.phone}`} color='inherit' underline='none' sx={link}>
+                  {data.phone}
+                </Link>
+              </Typography>
+            </Grid>
+          </Grid>
+        </Box>
+      </Grid>
     )
   }
 
@@ -37,46 +89,26 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
       <Grid container spacing={4} direction='row' justifyContent='center' alignItems='flex-start'>
         <Grid item xs={12} sm={6} md={3}>
           <Grid container direction='column' spacing={2}>
-            <Grid item>
-              <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%'>
-                <Typography variant='h6' gutterBottom sx={contentTitle}>
-                  Locations
-                </Typography>
-                <Link href={addressHref} target='_blank' color='inherit' underline='none'>
-                  <Typography flexGrow={1} sx={content}>
-                    {data.streetAddress}
-                  </Typography>
-                  <Typography flexGrow={1} sx={content}>
-                    {data.city} {data.state} {data.zip}
-                  </Typography>
-                </Link>
-                <Typography flexGrow={1} sx={content}>
-                  <Link href={`mailto:${data.email}`} color='inherit' underline='none'>
-                    {data.email}&nbsp;
-                  </Link>
-                  <Link href={`tel:${data.phone}`} color='inherit' underline='none'>
-                    {data.phone}
-                  </Link>
-                </Typography>
-              </Box>
-            </Grid>
+            {location}
             <Grid item>
               <Box display='flex' flexDirection='column' alignItems='flex-start' height='100%'>
                 <Typography variant='h6' gutterBottom sx={contentTitle}>
                   {data.informationTitle}
                 </Typography>
-                {informationText.map((text) => (
-                  <Typography key={crypto.randomUUID()} sx={content}>
-                    {text}
-                  </Typography>
-                ))}
+                <Box sx={marginTop12}>
+                  {informationText.map((text) => (
+                    <Typography key={crypto.randomUUID()} sx={content}>
+                      {text}
+                    </Typography>
+                  ))}
+                </Box>
               </Box>
             </Grid>
           </Grid>
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
-          {baseMap}
+          {image}
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
@@ -104,7 +136,7 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
               <Typography variant='h6' gutterBottom sx={contentTitle}>
                 Get Connected
               </Typography>
-              <Box sx={{ display: 'flex', gap: 3 }}>
+              <Box sx={{ display: 'flex', gap: 3, marginTop: '12px' }}>
                 <Link href={data.linkFB} target='_blank' color='inherit'>
                   <Facebook />
                 </Link>
@@ -123,9 +155,11 @@ const Footer: React.FC<{ data: FooterData }> = ({ data }) => {
               <Typography variant='h6' gutterBottom sx={contentTitle}>
                 Got Feedback
               </Typography>
-              <br />
-              <Typography sx={content} dangerouslySetInnerHTML={{ __html: htmlContent }} />
-              <Typography sx={content}>&copy;{currentYear} All rights reserved, USSF Guardian One</Typography>
+              <Box sx={marginTop12}>
+                <br />
+                <Typography sx={content} dangerouslySetInnerHTML={{ __html: htmlContent }} />
+                <Typography sx={content}>&copy;{currentYear} All rights reserved, USSF Guardian One</Typography>
+              </Box>
             </Box>
           </Box>
         </Grid>

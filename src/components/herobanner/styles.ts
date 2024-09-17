@@ -1,6 +1,7 @@
 export const container = {
   width: '100%',
   height: '1000px',
+  maxHeight: '550px',
   position: 'relative',
   marginBottom: '24px',
 }
@@ -27,12 +28,12 @@ export const textOverlay = {
   display: 'flex',
   flexDirection: 'column',
   gap: { xs: 1, sm: 2, md: 4 },
+  color: 'rgb(242, 240, 241)',
 }
 
 export const title = {
   fontSize: { xs: 10, sm: 12, md: 14 },
   fontWeight: 'bold',
-  color: 'var(--schemes-on-surface-variant)',
   lineHeight: 1.2,
 }
 
@@ -87,7 +88,7 @@ export const imgCaption = {
   fontSize: { xs: 6, sm: 8, md: 12 },
   textAlign: 'center',
   fontFamily: 'IBM PLEX MONO',
-  color: 'var(--m-3-black)',
+  color: 'rgb(242, 240, 241)',
   marginTop: { xs: 0.5, sm: 1 },
 }
 

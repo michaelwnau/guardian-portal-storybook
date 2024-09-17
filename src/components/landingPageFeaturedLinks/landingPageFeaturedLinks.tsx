@@ -1,32 +1,41 @@
 import React from 'react'
-import { Box, Grid, Typography, Pagination, Card, CardMedia, Link } from '@mui/material'
+import { Box, Grid, Pagination, Card, CardMedia, Link } from '@mui/material'
 import { FeaturedLinksData } from '@/types'
-import { title, card } from './styles'
+import { card, container } from './styles'
+import SectionTitle from '@/components/SectionTitle'
 
 const LandingPageFeaturedLinks: React.FC<{ data: FeaturedLinksData }> = ({ data }) => {
   return (
     <React.Fragment>
-      <Box sx={{ paddingLeft: '20px' }}>
-        <Typography variant='h6' sx={title}>
-          Featured Links
-        </Typography>
-        <Grid container spacing={3} sx={{ marginTop: '1em' }}>
+      <Box sx={container}>
+        <SectionTitle>Featured Links</SectionTitle>
+        <Grid container spacing={3}>
           {data.links.map((link, index) => (
-            <Grid item xs={6} sm={4} key={index}>
-              <Link href={link.url} target='_blank' rel='noopener noreferrer' sx={{ textDecoration: 'none' }}>
-                <Card sx={card} key={index}>
-                  <CardMedia
-                    component='img'
-                    height='100'
-                    image={link.imageUrl}
-                    alt={link.imageUrl}
-                    style={{ objectFit: 'cover' }}
-                  />
-                </Card>
-              </Link>
-              <Typography variant='subtitle1' sx={{ fontSize: '11px' }}>
-                {link.name}
-              </Typography>
+            <Grid
+              item
+              container
+              xs={6}
+              sm={4}
+              key={index}
+              direction='column'
+              alignItems='center'
+              justifyContent='center'
+              textAlign='center'
+            >
+              <Grid item xs={6}>
+                <Link href={link.url} target='_blank' rel='noopener noreferrer'>
+                  <Card sx={card} key={index}>
+                    <CardMedia
+                      component='img'
+                      height='100'
+                      image={link.imageUrl}
+                      alt={link.imageUrl}
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </Card>
+                </Link>
+              </Grid>
+              <Grid item>{link.name}</Grid>
             </Grid>
           ))}
         </Grid>

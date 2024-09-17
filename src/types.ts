@@ -94,6 +94,8 @@ export type FooterData = {
   linkX: string
   linkIG: string
   linkYT: string
+  image?: string
+  imageDescription?: string
   baseMapImage: string
   quickLinks: FooterLink[]
   guardianPortal: FooterLink[]
