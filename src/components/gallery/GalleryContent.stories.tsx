@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import GalleryContent from './GalleryContent';
 import { GalleryItem } from '@/types';
 import { CardType } from '@/utils/string-utils';
+import SectionTitle from '../SectionTitle'
 
 const meta: Meta<typeof GalleryContent> = {
   title: 'Components/GalleryContent',
