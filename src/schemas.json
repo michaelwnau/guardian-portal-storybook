@@ -1,0 +1,1304 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Announcement": {
+      "additionalProperties": false,
+      "properties": {
+        "body": {
+          "type": "string"
+        },
+        "dateCreated": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        },
+        "image": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "body",
+        "image",
+        "dateCreated"
+      ],
+      "type": "object"
+    },
+    "Article": {
+      "additionalProperties": false,
+      "properties": {
+        "announcement": {
+          "type": "boolean"
+        },
+        "attachments": {
+          "items": {},
+          "type": "array"
+        },
+        "author": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "comments": {
+          "items": {},
+          "type": "array"
+        },
+        "dateCreated": {
+          "type": "string"
+        },
+        "displayOnHome": {
+          "type": "boolean"
+        },
+        "document": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "id": {
+          "type": "number"
+        },
+        "image": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "imageCaption": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "landingPage": {
+          "type": "number"
+        },
+        "location": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publishedDate": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "sort": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "status": {
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "title": {
+          "type": "string"
+        },
+        "userCreated": {
+          "type": "string"
+        },
+        "userUpdated": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "sort",
+        "userCreated",
+        "dateCreated",
+        "userUpdated",
+        "category",
+        "title",
+        "body",
+        "publishedDate",
+        "slug",
+        "image",
+        "imageCaption",
+        "attachments",
+        "document",
+        "landingPage",
+        "author",
+        "location",
+        "displayOnHome",
+        "tags",
+        "comments",
+        "announcement"
+      ],
+      "type": "object"
+    },
+    "ArticlePageData": {
+      "additionalProperties": false,
+      "properties": {
+        "article": {
+          "$ref": "#/components/schemas/Article"
+        },
+        "banner": {
+          "$ref": "#/components/schemas/BannerData"
+        },
+        "breadcrumbs": {},
+        "footer": {
+          "$ref": "#/components/schemas/FooterData"
+        },
+        "landingPage": {
+          "$ref": "#/components/schemas/landing_page"
+        },
+        "navbar": {
+          "$ref": "#/components/schemas/NavbarData"
+        },
+        "tags": {
+          "items": {
+            "$ref": "#/components/schemas/label"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "navbar",
+        "article",
+        "footer"
+      ],
+      "type": "object"
+    },
+    "ArticlePageQuery": {
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "slug"
+      ],
+      "type": "object"
+    },
+    "ArticlesSectionData": {
+      "additionalProperties": false,
+      "properties": {
+        "articles": {
+          "items": {
+            "$ref": "#/components/schemas/Article"
+          },
+          "type": "array"
+        },
+        "heading": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "heading",
+        "articles"
+      ],
+      "type": "object"
+    },
+    "BannerData": {
+      "additionalProperties": false,
+      "properties": {
+        "logoAlt": {
+          "type": "string"
+        },
+        "logoSrc": {
+          "type": "string"
+        },
+        "missionText": {
+          "type": "string"
+        },
+        "tagline": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "visionText": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "logoSrc",
+        "logoAlt",
+        "title",
+        "tagline",
+        "missionText",
+        "visionText"
+      ],
+      "type": "object"
+    },
+    "BookmarkItem": {
+      "additionalProperties": false,
+      "properties": {
+        "date_created": {
+          "type": "string"
+        },
+        "date_updated": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        },
+        "image": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "user_created": {
+          "type": "string"
+        },
+        "user_updated": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "url",
+        "image",
+        "user_created",
+        "date_created",
+        "user_updated",
+        "date_updated"
+      ],
+      "type": "object"
+    },
+    "BookmarksGroup": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "links": {
+          "items": {
+            "$ref": "#/components/schemas/BookmarkItem"
+          },
+          "type": "array"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "links",
+        "title"
+      ],
+      "type": "object"
+    },
+    "BreadCrumb": {
+      "additionalProperties": false,
+      "properties": {
+        "link": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "link"
+      ],
+      "type": "object"
+    },
+    "BreadCrumbData": {
+      "additionalProperties": false,
+      "properties": {
+        "links": {
+          "items": {
+            "$ref": "#/components/schemas/BreadCrumb"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "links"
+      ],
+      "type": "object"
+    },
+    "DocumentGroup": {
+      "additionalProperties": false,
+      "properties": {
+        "date_created": {
+          "type": "string"
+        },
+        "date_updated": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "documents": {
+          "items": {
+            "$ref": "#/components/schemas/DocumentItem"
+          },
+          "type": "array"
+        },
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "user_created": {
+          "type": "string"
+        },
+        "user_updated": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "documents",
+        "name",
+        "user_created",
+        "date_created",
+        "user_updated",
+        "date_updated"
+      ],
+      "type": "object"
+    },
+    "DocumentItem": {
+      "additionalProperties": false,
+      "properties": {
+        "date_created": {
+          "type": "string"
+        },
+        "date_updated": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "file_filename": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        },
+        "published_date": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "user_created": {
+          "type": "string"
+        },
+        "user_updated": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "file_filename",
+        "user_created",
+        "date_created",
+        "user_updated",
+        "date_updated",
+        "published_date"
+      ],
+      "type": "object"
+    },
+    "DropdownOption": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "value"
+      ],
+      "type": "object"
+    },
+    "FeaturedLink": {
+      "additionalProperties": false,
+      "properties": {
+        "imageUrl": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url",
+        "imageUrl"
+      ],
+      "type": "object"
+    },
+    "FeaturedLinksData": {
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "links": {
+          "items": {
+            "$ref": "#/components/schemas/FeaturedLink"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "heading",
+        "links"
+      ],
+      "type": "object"
+    },
+    "FooterData": {
+      "additionalProperties": false,
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "default": {
+          "type": "boolean"
+        },
+        "email": {
+          "type": "string"
+        },
+        "feedback": {
+          "type": "string"
+        },
+        "guardianPortal": {
+          "items": {
+            "$ref": "#/components/schemas/FooterLink"
+          },
+          "type": "array"
+        },
+        "hasLocation": {
+          "type": "boolean"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageDescription": {
+          "type": "string"
+        },
+        "informationText": {
+          "type": "string"
+        },
+        "informationTitle": {
+          "type": "string"
+        },
+        "linkFB": {
+          "type": "string"
+        },
+        "linkIG": {
+          "type": "string"
+        },
+        "linkX": {
+          "type": "string"
+        },
+        "linkYT": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "quickLinks": {
+          "items": {
+            "$ref": "#/components/schemas/FooterLink"
+          },
+          "type": "array"
+        },
+        "state": {
+          "type": "string"
+        },
+        "streetAddress": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "hasLocation",
+        "streetAddress",
+        "city",
+        "state",
+        "zip",
+        "phone",
+        "email",
+        "informationTitle",
+        "informationText",
+        "linkFB",
+        "linkX",
+        "linkIG",
+        "linkYT",
+        "image",
+        "imageDescription",
+        "quickLinks",
+        "guardianPortal",
+        "feedback",
+        "default"
+      ],
+      "type": "object"
+    },
+    "FooterLink": {
+      "additionalProperties": false,
+      "properties": {
+        "hidden": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "openInNew": {
+          "type": "boolean"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url",
+        "openInNew",
+        "hidden"
+      ],
+      "type": "object"
+    },
+    "GalleryItem": {
+      "additionalProperties": false,
+      "properties": {
+        "body": {
+          "type": "string"
+        },
+        "category": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "id": {
+          "type": "number"
+        },
+        "image": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publishedDate": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "slug": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "body",
+        "slug",
+        "category",
+        "publishedDate",
+        "type"
+      ],
+      "type": "object"
+    },
+    "GalleryPageData": {
+      "additionalProperties": false,
+      "properties": {
+        "breadcrumbs": {
+          "$ref": "#/components/schemas/BreadCrumbData"
+        },
+        "footer": {
+          "$ref": "#/components/schemas/FooterData"
+        },
+        "gallaryData": {
+          "items": {
+            "$ref": "#/components/schemas/GalleryItem"
+          },
+          "type": "array"
+        },
+        "navbar": {
+          "$ref": "#/components/schemas/NavbarData"
+        }
+      },
+      "required": [
+        "navbar",
+        "footer",
+        "gallaryData"
+      ],
+      "type": "object"
+    },
+    "HeroBanner": {
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "imgCaption": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "subheading": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "source",
+        "title",
+        "heading",
+        "subheading",
+        "imgCaption"
+      ],
+      "type": "object"
+    },
+    "HeroBannerData": {
+      "additionalProperties": false,
+      "properties": {
+        "articles": {
+          "items": {
+            "$ref": "#/components/schemas/Article"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "articles"
+      ],
+      "type": "object"
+    },
+    "HomePageData": {
+      "additionalProperties": false,
+      "properties": {
+        "events": {
+          "items": {
+            "$ref": "#/components/schemas/Article"
+          },
+          "type": "array"
+        },
+        "featuredLinks": {
+          "$ref": "#/components/schemas/FeaturedLinksData"
+        },
+        "footer": {
+          "$ref": "#/components/schemas/FooterData"
+        },
+        "heroBanner": {
+          "items": {
+            "$ref": "#/components/schemas/Article"
+          },
+          "type": "array"
+        },
+        "navbar": {
+          "$ref": "#/components/schemas/NavbarData"
+        },
+        "news": {
+          "items": {
+            "$ref": "#/components/schemas/Article"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "navbar",
+        "heroBanner",
+        "featuredLinks",
+        "footer",
+        "news",
+        "events"
+      ],
+      "type": "object"
+    },
+    "LandingPageData": {
+      "additionalProperties": false,
+      "properties": {
+        "announcements": {
+          "$ref": "#/components/schemas/ArticlesSectionData"
+        },
+        "banner": {
+          "$ref": "#/components/schemas/BannerData"
+        },
+        "bookmarks": {
+          "items": {
+            "$ref": "#/components/schemas/BookmarksGroup"
+          },
+          "type": "array"
+        },
+        "breadcrumbs": {},
+        "documents": {
+          "items": {
+            "$ref": "#/components/schemas/DocumentGroup"
+          },
+          "type": "array"
+        },
+        "events": {
+          "$ref": "#/components/schemas/ArticlesSectionData"
+        },
+        "featuredLinks": {
+          "$ref": "#/components/schemas/FeaturedLinksData"
+        },
+        "footer": {
+          "$ref": "#/components/schemas/FooterData"
+        },
+        "navbar": {
+          "$ref": "#/components/schemas/NavbarData"
+        },
+        "sideMenu": {
+          "$ref": "#/components/schemas/SideBarMenuData"
+        }
+      },
+      "required": [
+        "banner",
+        "breadcrumbs",
+        "sideMenu",
+        "featuredLinks",
+        "documents",
+        "bookmarks",
+        "announcements",
+        "events",
+        "footer",
+        "navbar"
+      ],
+      "type": "object"
+    },
+    "LandingPageQuery": {
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "slug"
+      ],
+      "type": "object"
+    },
+    "LandingPageShort": {
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "slug",
+        "title"
+      ],
+      "type": "object"
+    },
+    "NavbarData": {
+      "additionalProperties": false,
+      "properties": {
+        "leftLinks": {
+          "items": {
+            "$ref": "#/components/schemas/NavbarLink"
+          },
+          "type": "array"
+        },
+        "logo": {
+          "type": "string"
+        },
+        "logoAlt": {
+          "type": "string"
+        },
+        "notificationsCount": {
+          "type": "number"
+        },
+        "rightLinks": {
+          "items": {
+            "$ref": "#/components/schemas/NavbarLink"
+          },
+          "type": "array"
+        },
+        "user": {
+          "$ref": "#/components/schemas/User"
+        }
+      },
+      "required": [
+        "leftLinks",
+        "rightLinks",
+        "logo",
+        "logoAlt",
+        "notificationsCount",
+        "user"
+      ],
+      "type": "object"
+    },
+    "NavbarLink": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url"
+      ],
+      "type": "object"
+    },
+    "PersonnelData": {
+      "additionalProperties": false,
+      "properties": {
+        "articles": {
+          "type": "boolean"
+        },
+        "base": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "comments": {
+          "type": "boolean"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "duty_title": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "field_command": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "number"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "launches": {
+          "type": "boolean"
+        },
+        "middle_name": {
+          "type": "string"
+        },
+        "occupation": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "photos": {
+          "type": "boolean"
+        },
+        "rank": {
+          "type": "string"
+        },
+        "space_force_news": {
+          "type": "boolean"
+        },
+        "state": {
+          "type": "string"
+        },
+        "theme": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "last_name",
+        "first_name",
+        "middle_name",
+        "display_name",
+        "email",
+        "duty_title",
+        "field_command",
+        "phone",
+        "base",
+        "unit",
+        "rank",
+        "occupation",
+        "state",
+        "city",
+        "theme",
+        "launches",
+        "space_force_news",
+        "photos",
+        "articles",
+        "comments"
+      ],
+      "type": "object"
+    },
+    "PersonnelOptionsData": {
+      "additionalProperties": false,
+      "properties": {
+        "bases": {
+          "items": {
+            "$ref": "#/components/schemas/DropdownOption"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "bases"
+      ],
+      "type": "object"
+    },
+    "ProfilePageData": {
+      "additionalProperties": false,
+      "properties": {
+        "footer": {
+          "$ref": "#/components/schemas/FooterData"
+        },
+        "navbar": {
+          "$ref": "#/components/schemas/NavbarData"
+        },
+        "personnel": {
+          "$ref": "#/components/schemas/PersonnelData"
+        },
+        "personnelOptions": {
+          "$ref": "#/components/schemas/PersonnelOptionsData"
+        }
+      },
+      "required": [
+        "navbar",
+        "personnel",
+        "personnelOptions",
+        "footer"
+      ],
+      "type": "object"
+    },
+    "Schedule": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "startTime": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "startTime"
+      ],
+      "type": "object"
+    },
+    "SearchPageData": {
+      "additionalProperties": false,
+      "properties": {
+        "footer": {
+          "$ref": "#/components/schemas/FooterData"
+        },
+        "navbar": {
+          "$ref": "#/components/schemas/NavbarData"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/components/schemas/SearchResultData"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "footer",
+        "results",
+        "navbar"
+      ],
+      "type": "object"
+    },
+    "SearchResultData": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "linkId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "type",
+        "category",
+        "date",
+        "linkId"
+      ],
+      "type": "object"
+    },
+    "SideBarMenuData": {
+      "additionalProperties": false,
+      "properties": {
+        "links": {
+          "items": {
+            "$ref": "#/components/schemas/SideBarMenuItems"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "links"
+      ],
+      "type": "object"
+    },
+    "SideBarMenuItems": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "imageUrl": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "url",
+        "imageUrl"
+      ],
+      "type": "object"
+    },
+    "User": {
+      "additionalProperties": false,
+      "properties": {
+        "avatarUrl": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "avatarUrl"
+      ],
+      "type": "object"
+    },
+    "label": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "type": "object"
+    },
+    "landing_page": {
+      "additionalProperties": false,
+      "properties": {
+        "announcements": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "announcements_heading": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "date_created": {
+          "type": "string"
+        },
+        "date_updated": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "documentation": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "events_heading": {
+          "type": "string"
+        },
+        "featured": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "featured_heading": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "footer": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "id": {
+          "type": "number"
+        },
+        "labels": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "landing_page_documentation": {
+          "maxItems": 0,
+          "minItems": 0,
+          "type": "array"
+        },
+        "logo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mission": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "slug": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "tagline": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "user_created": {
+          "type": "string"
+        },
+        "user_updated": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "vision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "user_created",
+        "date_created",
+        "user_updated",
+        "date_updated",
+        "logo",
+        "title",
+        "description",
+        "tagline",
+        "slug",
+        "mission",
+        "vision",
+        "footer",
+        "featured_heading",
+        "featured",
+        "documentation",
+        "landing_page_documentation",
+        "labels",
+        "announcements",
+        "announcements_heading",
+        "events_heading",
+        "category"
+      ],
+      "type": "object"
+    }
+  }
+}

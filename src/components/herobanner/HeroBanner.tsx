@@ -1,13 +1,13 @@
 'use client'
-import React, { useState } from 'react'
-import { Box, Typography } from '@mui/material'
+import React, { useEffect, useState } from 'react'
+import { Box, CardMedia, Link, Typography } from '@mui/material'
 import * as styles from './styles'
-import { HeroBannerData } from '@/types'
-import Image from 'next/image'
+import { Article } from '@/types'
 import { useAutoSlide } from './useAutoSlide'
+import DOMPurify from 'isomorphic-dompurify'
 
 interface HeroBannerProps {
-  data: HeroBannerData
+  articles: Article[]
 }
 
 const getImageStyle = (index: number, activeIndex: number) => (activeIndex === index ? styles.activeThumbnail : {})
@@ -17,47 +17,57 @@ const getThumbnailButtonStyle = (index: number, activeIndex: number) => ({
   border: activeIndex === index ? '2px solid white' : '1px solid black',
 })
 
-const HeroBanner: React.FC<HeroBannerProps> = ({ data }) => {
+const HeroBanner: React.FC<HeroBannerProps> = ({ articles }: HeroBannerProps) => {
   const [activeIndex, setActiveIndex] = useState<number>(0)
-  const images = Array.isArray(data?.images) ? data.images : []
-  const getProxiedImageUrl = (uuid: string) => `/api/file-proxy?uuid=${encodeURIComponent(uuid)}`
-  const { pauseAutoSlide, resumeAutoSlide } = useAutoSlide(images.length, setActiveIndex, 5000)
+  const getImageUrlOrDefault = (imageSrc: string | null) => (imageSrc ? imageSrc : '/images/default_image.jpg')
+  const { pauseAutoSlide, resumeAutoSlide } = useAutoSlide(articles.length, setActiveIndex, 5000)
+  const [htmlContent, setHtmlContent] = useState<string>('')
+  useEffect(() => {
+    const safeBody = DOMPurify.sanitize(articles[activeIndex].body)
+    setHtmlContent(safeBody)
+  }, [articles, activeIndex])
 
   return (
     <Box sx={styles.container} onMouseEnter={pauseAutoSlide} onMouseLeave={resumeAutoSlide}>
       <Box sx={styles.mainImage}>
-        <Image
-          src={getProxiedImageUrl(images[activeIndex].source)}
-          alt={images[activeIndex].title}
-          fill={true}
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-          priority
-          style={{ objectFit: 'fill' }}
+        <CardMedia
+          component='img'
+          height='100'
+          image={getImageUrlOrDefault(articles[activeIndex].image)}
+          alt={articles[activeIndex].title}
+          style={{ objectFit: 'cover' }}
         />
       </Box>
       <Box sx={styles.textOverlay}>
-        <Typography sx={styles.title}>{images[activeIndex].title}</Typography>
-        <Typography sx={styles.heading}>{images[activeIndex].heading}</Typography>
-        <Typography sx={styles.subheading}>{images[activeIndex].subheading}</Typography>
+        <Link href={`/article/${articles[activeIndex].slug}`}>
+          <Typography sx={styles.heading}>{articles[activeIndex].title}</Typography>
+        </Link>
+        <Typography
+          sx={{
+            ...styles.subheading,
+            'overflow' : 'hidden'
+          }}
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        ></Typography>
       </Box>
       <Box sx={styles.thumbnailContainer}>
-        {images.map((image, index) => (
-          <Box key={image.id} sx={styles.thumbnailWrapper}>
+        {articles.map((article: Article, index: number) => (
+          <Box key={article.id} sx={styles.thumbnailWrapper}>
             <Box onClick={() => setActiveIndex(index)} sx={getThumbnailButtonStyle(index, activeIndex)}>
-              <Image
-                src={getProxiedImageUrl(image.source)}
-                alt={`thumbnail ${index}`}
-                fill={true}
+              <CardMedia
+                alt={article.imageCaption || `thumbnail ${index}`}
                 sizes='(max-width: 768px) 25vw, 10vw'
-                style={{ ...getImageStyle(index, activeIndex), objectFit: 'cover' }}
+                component='img'
+                height='100'
+                image={getImageUrlOrDefault(article.image)}
+                style={{ ...getImageStyle(index, index), objectFit: 'fill' }}
               />
             </Box>
-            <Typography sx={styles.imgCaption}>{image.imgCaption}</Typography>
+            <Typography sx={styles.imgCaption}>{article.imageCaption || ''}</Typography>
           </Box>
         ))}
       </Box>
     </Box>
   )
 }
-
 export default HeroBanner

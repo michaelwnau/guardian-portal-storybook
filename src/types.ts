@@ -1,6 +1,9 @@
+import { DropdownOption } from '../src/lib/directusdatafetcher'
+import { landing_page, label } from './lib/directusdatafetcher'
+
 export type HomePageData = {
   navbar: NavbarData
-  heroBanner: HeroBannerData
+  heroBanner: Article[]
   featuredLinks: FeaturedLinksData
   footer: FooterData
   news: Article[]
@@ -10,20 +13,85 @@ export type HomePageData = {
 export type LandingPageData = {
   banner: BannerData
   breadcrumbs: any
+  sideMenu: SideBarMenuData
   featuredLinks: FeaturedLinksData
-  announcements: Article[]
-  events: Article[]
+  documents: DocumentGroup[]
+  bookmarks: BookmarksGroup[]
+  announcements: ArticlesSectionData
+  events: ArticlesSectionData
   footer: FooterData
   navbar: NavbarData
+}
+
+export type GalleryPageData = {
+  navbar: NavbarData
+  breadcrumbs?: BreadCrumbData
+  footer: FooterData
+  gallaryData: GalleryItem[]
+}
+
+export type SideBarMenuData = {
+  links: SideBarMenuItems[]
+}
+
+export type SideBarMenuItems = {
+  id: number
+  name: string
+  url: string
+  imageUrl: string
 }
 
 export type ProfilePageData = {
   navbar: NavbarData
+  personnel: PersonnelData
+  personnelOptions: PersonnelOptionsData
   footer: FooterData
+}
+
+export type PersonnelData = {
+  id: number
+  last_name: string
+  first_name: string
+  middle_name: string
+  display_name: string
+  email: string
+  duty_title: string
+  field_command: string
+  phone: string
+  base: string
+  unit: string
+  rank: string
+  occupation: string
+  state: string
+  city: string
+  theme: string
+  launches: boolean
+  space_force_news: boolean
+  photos: boolean
+  articles: boolean
+  comments: boolean
+}
+
+export type PersonnelOptionsData = {
+  bases: DropdownOption[]
 }
 
 export type LandingPageQuery = {
   slug: string
+}
+
+export type ArticlePageQuery = {
+  slug: string
+}
+
+export type ArticlePageData = {
+  landingPage?: landing_page
+  navbar: NavbarData
+  breadcrumbs?: any
+  banner?: BannerData
+  article: Article
+  footer: FooterData
+  tags?: label[]
 }
 
 export type LandingPageShort = {
@@ -32,6 +100,7 @@ export type LandingPageShort = {
 }
 
 export type Announcement = {
+  id: number
   title: string
   body: string
   image: string
@@ -56,6 +125,8 @@ export type Article = {
   publishedDate: string
   slug: string
   image: string | null
+  imageCaption: string | null
+  attachments: any[]
   document: string | null
   landingPage: number
   author: string
@@ -63,6 +134,12 @@ export type Article = {
   displayOnHome: boolean
   tags: number[]
   comments: any[]
+  announcement: boolean
+}
+
+export type ArticlesSectionData = {
+  heading: string
+  articles: Article[]
 }
 
 export type FeaturedLink = {
@@ -72,6 +149,7 @@ export type FeaturedLink = {
 }
 
 export type FeaturedLinksData = {
+  heading: string
   links: FeaturedLink[]
 }
 
@@ -79,9 +157,51 @@ export type FooterLink = {
   name: string
   url: string
   openInNew: boolean
+  hidden: boolean
+}
+
+export type DocumentGroup = {
+  id: number
+  documents: DocumentItem[]
+  name: string
+  user_created: string
+  date_created: string
+  user_updated: string | null
+  date_updated: string | null
+}
+
+export type DocumentItem = {
+  id: number
+  title: string
+  description: string
+  file_filename: string
+  user_created: string
+  date_created: string
+  user_updated: string
+  date_updated: string
+  published_date: string
+}
+
+export type BookmarksGroup = {
+  id: string
+  links: BookmarkItem[]
+  title: string
+}
+
+export type BookmarkItem = {
+  id: number
+  name: string
+  description: string
+  url: string
+  image: string
+  user_created: string
+  date_created: string
+  user_updated: string
+  date_updated: string
 }
 
 export type FooterData = {
+  hasLocation: boolean
   streetAddress: string
   city: string
   state: string
@@ -94,9 +214,8 @@ export type FooterData = {
   linkX: string
   linkIG: string
   linkYT: string
-  image?: string
-  imageDescription?: string
-  baseMapImage: string
+  image: string
+  imageDescription: string
   quickLinks: FooterLink[]
   guardianPortal: FooterLink[]
   feedback: string
@@ -113,19 +232,7 @@ export interface HeroBanner {
 }
 
 export interface HeroBannerData {
-  images: HeroBanner[]
-}
-
-export type NewsData = {
-  news: Article[]
-}
-
-export type AnnouncementsData = {
-  announcements: Article[]
-}
-
-export type EventsData = {
-  events: Article[]
+  articles: Article[]
 }
 
 export interface BreadCrumbData {
@@ -163,4 +270,36 @@ export type NavbarData = {
   logoAlt: string
   notificationsCount: number
   user: User
+}
+
+export type SearchResultData = {
+  title: string
+  type: string
+  category: string
+  date: string
+  linkId: string
+}
+
+export type SearchPageData = {
+  footer: FooterData
+  results: SearchResultData[]
+  navbar: NavbarData
+}
+
+export type GalleryItem = {
+  id: number
+  title: string
+  body: string
+  slug: string
+  image?: string | null
+  category: string | null
+  publishedDate: string | null
+  type: string
+}
+
+export enum CardType {
+  LongCard = 'long',
+  SmallCard = 'small',
+  HorizontalCard = 'horizontal',
+  VerticalCard = 'vertical',
 }
