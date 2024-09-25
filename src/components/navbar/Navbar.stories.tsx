@@ -12,7 +12,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const sampleNavbarData: NavbarData = {
-  logo: '/assets/guardian_one_logo_wordMark.png',
+  logo: 'assets/guardian_one_logo_wordMark.png',
   logoAlt: 'Guardian One Logo',
   notificationsCount: 3,
   user: {
