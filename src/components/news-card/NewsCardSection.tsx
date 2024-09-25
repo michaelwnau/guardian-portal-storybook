@@ -18,7 +18,7 @@ interface NewsCardSectionProps {
   minCardWidth: number
 }
 
-export default function NewsCardSection({ newsItems, minCardWidth }: NewsCardSectionProps) {
+export default function NewsCardSection({ newsItems, minCardWidth }: Readonly<NewsCardSectionProps>) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [visibleCards, setVisibleCards] = useState<Article[]>([])
   const containerRef = useRef<HTMLDivElement>(null)

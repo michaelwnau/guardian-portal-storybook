@@ -32,7 +32,8 @@ const sampleArticle: Article = {
   tags: [1, 2],
   comments: [],
   attachments: [],
-  announcement: false
+  announcement: false,
+  imageCaption: null
 };
 
 export const Default: Story = {

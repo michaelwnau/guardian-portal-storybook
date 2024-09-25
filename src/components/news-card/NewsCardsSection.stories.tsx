@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 const createSampleArticle = (id: number): Article => ({
   id,
   title: `Sample News Article ${id}`,
-  body: `This is the body of news article ${id}. It contains the main content of the news item.`,
+  body: `This is the body of news article ${id}. It contains the preview content of the news item.`,
   image: `https://example.com/image${id}.jpg`,
   status: 'published',
   sort: id,
