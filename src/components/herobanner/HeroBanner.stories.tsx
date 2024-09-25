@@ -16,7 +16,7 @@ const getSampleArticle = (): Article => {
     id: 1,
     title: 'Sample News Article',
     body: 'This is a sample news article body. It contains the main content of the news item.',
-    image: 'https://example.com/sample-image.jpg',
+    image: '/images/space_force_command.jpeg',
     imageCaption: 'Image for sample article',
     status: 'published',
     sort: 1,
@@ -42,14 +42,14 @@ const sampleHeroBannerData = [
   {
     ...getSampleArticle(),
     id: 1,
-    image: 'https://example.com/image1.jpg',
+    image: '/images/space_force_command.jpeg',
     title: 'Welcome to Our Site',
     body: 'Discover amazing content'
   },
   {
     ...getSampleArticle(),
     id: 2,
-    image: 'https://example.com/image2.jpg',
+    image: '/images/space_force_command.jpeg',
     title: 'Explore Our Services',
     body: 'Find what you need',
   },
