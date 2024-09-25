@@ -23,7 +23,8 @@ const createSampleArticle = (id: number): Article => ({
   body: `<p>This is a description for sample event ${id}</p>`,
   publishedDate: '2023-06-15T00:00:00Z',
   slug: `sample-event-${id}`,
-  image: `https://example.com/image${id}.jpg`,
+  image: '/images/space_force_command.jpeg',
+  imageCaption: 'Sample image caption',
   document: null,
   landingPage: 0,
   author: 'John Author',
@@ -34,7 +35,6 @@ const createSampleArticle = (id: number): Article => ({
   attachments: [],
   announcement: false
 });
-
 export const Default: Story = {
   args: {
     article: createSampleArticle(1),

@@ -22,7 +22,7 @@ const createSampleArticle = (id: number): Article => ({
   id,
   title: `Sample News Article ${id}`,
   body: `This is the body of news article ${id}. It contains the preview content of the news item.`,
-  image: `https://example.com/image${id}.jpg`,
+  image: '/images/space_force_command.jpeg',
   status: 'published',
   sort: id,
   userCreated: 'John Doe',
