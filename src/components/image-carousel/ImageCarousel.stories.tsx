@@ -18,15 +18,15 @@ export const Default: Story = {
   args: {
     title: '<title>',
     body: '<body>',
-    backgroundImage: 'https://via.placeholder.com/639x390',
+    backgroundImage: '/images/space_force_command.jpeg',
   },
 };
 
 export const WithCustomContent: Story = {
   args: {
-    title: 'Beautiful Landscape',
-    body: 'Explore nature',
-    backgroundImage: 'https://via.placeholder.com/639x390?text=Landscape',
+    title: 'Semper Supra!',
+    body: 'Always Above the Rest!',
+    backgroundImage: 'images/space_force_fly_over.jpeg',
   },
 };
 
