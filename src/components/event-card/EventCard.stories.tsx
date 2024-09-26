@@ -64,7 +64,8 @@ export const NoImage: Story = {
       "tags": [],
       "comments": [],
       "attachments": [],
-      announcement: false
+      announcement: false,
+      imageCaption: null
     },
   },
 };

@@ -4,30 +4,18 @@ import path from 'path';
 const config: StorybookConfig = {
   stories: [
     '../src/**/*.mdx',
-    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
-  staticDirs: [
-    '../public'
-  ],
+  staticDirs: ['../public'],
   addons: [
-    '@storybook/addon-onboarding',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@chromatic-com/storybook',
     '@storybook/addon-interactions',
     'storybook-addon-mock',
   ],
   framework: {
     name: '@storybook/nextjs',
     options: {},
-  },
-  typescript: {
-    check: false,
-    checkOptions: {},
-    reactDocgen: 'react-docgen-typescript',
-    reactDocgenTypescriptOptions: {
-      propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
-    },
   },
   webpackFinal: async (config) => {
     if (config.resolve) {
