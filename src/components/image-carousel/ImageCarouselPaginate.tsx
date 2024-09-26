@@ -108,9 +108,9 @@ export const ImageCarouselPaginate: React.FC<ImageCarouselPaginateProps> = ({ im
       <PaginationContainer>
         <NavigationButton onClick={() => handlePageChange(0)}>{"<<"}</NavigationButton>
         <NavigationButton onClick={() => handlePageChange(Math.max(0, currentPage - 1))}>{"<"}</NavigationButton>
-        {images.map((_, index) => (
+        {images.map((image, index) => (
           <PageButton
-            key={index}
+            key={`page-button-${image.url}`}
             active={index === currentPage}
             onClick={() => handlePageChange(index)}
           >

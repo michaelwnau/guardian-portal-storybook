@@ -7,7 +7,12 @@ interface ImageCarouselProps {
   backgroundImage?: string;
 }
 
-const CarouselContainer = styled.div`
+interface CarouselContainerProps {
+  // Add any further props specific to CarouselContainer here
+  backgroundImage?: string;
+}
+
+const CarouselContainer = styled.div<CarouselContainerProps>`
   width: 639px;
   height: 390px;
   border-radius: 8px;
@@ -20,6 +25,7 @@ const CarouselContainer = styled.div`
   flex-direction: column;
   justify-content: flex-end;
 `;
+
 
 const Content = styled.div`
   height: 89px;
