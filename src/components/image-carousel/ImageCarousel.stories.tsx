@@ -3,12 +3,15 @@ import { StoryObj, Meta } from '@storybook/react';
 import { ImageCarousel } from './ImageCarousel';
 
 export default {
-  title: 'Components/ImageCarousel',
+  title: 'Components/ImageCarousel/Carousel',
   component: ImageCarousel,
   argTypes: {
     title: { control: 'text' },
     body: { control: 'text' },
     backgroundImage: { control: 'text' },
+    currentPage: { control: 'number' },
+    totalPages: { control: 'number' },
+    onPageChange: { action: 'page changed' },
   },
 } as Meta<typeof ImageCarousel>;
 
@@ -18,15 +21,19 @@ export const Default: Story = {
   args: {
     title: '<title>',
     body: '<body>',
-    backgroundImage: '/images/space_force_command.jpeg',
+    backgroundImage: 'https://via.placeholder.com/639x390',
+    currentPage: 1,
+    totalPages: 7,
   },
 };
 
 export const WithCustomContent: Story = {
   args: {
-    title: 'Semper Supra!',
-    body: 'Always Above the Rest!',
-    backgroundImage: 'images/space_force_fly_over.jpeg',
+    title: 'Beautiful Landscape',
+    body: 'Explore nature',
+    backgroundImage: 'https://via.placeholder.com/639x390?text=Landscape',
+    currentPage: 3,
+    totalPages: 5,
   },
 };
 
@@ -34,5 +41,17 @@ export const WithoutBackgroundImage: Story = {
   args: {
     title: 'No Image',
     body: 'Text only carousel',
+    currentPage: 2,
+    totalPages: 4,
+  },
+};
+
+export const LastPage: Story = {
+  args: {
+    title: 'Last Page',
+    body: 'This is the last page of the carousel',
+    backgroundImage: 'https://via.placeholder.com/639x390?text=LastPage',
+    currentPage: 7,
+    totalPages: 7,
   },
 };

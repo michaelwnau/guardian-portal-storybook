@@ -3,34 +3,57 @@ import { StoryObj, Meta } from '@storybook/react';
 import { ImageCarouselPaginate } from './ImageCarouselPaginate';
 
 export default {
-  title: 'Components/ImageCarouselPaginate',
+  title: 'Components/ImageCarousel/Paginate',
   component: ImageCarouselPaginate,
   argTypes: {
-    currentPage: { control: 'number' },
-    totalPages: { control: 'number' },
-    onPageChange: { action: 'page changed' },
+    images: { control: 'object' },
   },
 } as Meta<typeof ImageCarouselPaginate>;
 
 type Story = StoryObj<typeof ImageCarouselPaginate>;
 
+const defaultImages = [
+  {
+    url: 'images/semper_supra_banner.png',
+    title: 'Beautiful Landscape',
+    body: 'Explore nature'
+  },
+  {
+    url: 'images/space_force_command.jpeg',
+    title: 'Mountain View',
+    body: 'Breathtaking peaks'
+  },
+  {
+    url: 'images/semper_supra_banner.png',
+    title: 'Serene Lake',
+    body: 'Tranquil waters'
+  },
+  {
+    url: 'images/space_force_command.jpeg4',
+    title: 'Desert Sunset',
+    body: 'Golden horizons'
+  },
+  {
+    url: 'https://via.placeholder.com/639x390?text=Landscape5',
+    title: 'Lush Forest',
+    body: 'Ancient woodlands'
+  }
+];
+
 export const Default: Story = {
   args: {
-    currentPage: 1,
-    totalPages: 7,
+    images: defaultImages,
   },
 };
 
-export const MiddlePage: Story = {
+export const SingleImage: Story = {
   args: {
-    currentPage: 3,
-    totalPages: 5,
+    images: [defaultImages[0]],
   },
 };
 
-export const LastPage: Story = {
+export const TwoImages: Story = {
   args: {
-    currentPage: 4,
-    totalPages: 4,
+    images: defaultImages.slice(0, 2),
   },
 };
