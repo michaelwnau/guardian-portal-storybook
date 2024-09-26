@@ -34,9 +34,9 @@ const defaultImages = [
     body: 'Golden horizons'
   },
   {
-    url: 'https://via.placeholder.com/639x390?text=Landscape5',
-    title: 'Lush Forest',
-    body: 'Ancient woodlands'
+    url: 'images/space_force_fly_over.jpeg',
+    title: 'Semper Supra!',
+    body: 'This is the last page of the carousel'
   }
 ];
 

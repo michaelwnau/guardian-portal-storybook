@@ -287,6 +287,14 @@ const styles: Record<string, TextStyle> = {
 export default {
   title: 'Design System/Typography',
   component: TextStyleCatalog,
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [
+        { name: 'dark', value: '#1b2d3e' },
+      ],
+    },
+  },
 } as Meta<typeof TextStyleCatalog>;
 
 type Story = StoryObj<typeof TextStyleCatalog>;
