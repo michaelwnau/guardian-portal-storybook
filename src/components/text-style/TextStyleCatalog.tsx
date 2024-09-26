@@ -39,6 +39,7 @@ export interface TextStyle {
   fontWeight: string;
   lineHeight?: string;
   letterSpacing?: string;
+  [key: string]: string | undefined;
 }
 
 export interface TextStyleCatalogProps {
