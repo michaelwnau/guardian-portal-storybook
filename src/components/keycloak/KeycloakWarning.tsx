@@ -5,6 +5,7 @@ import WarningIcon from '@mui/icons-material/Warning';
 interface KeycloakWarningProps {
   logoSrc: string;
   backgroundVideoSrc: string;
+  backgroundTheme: 'dark-blue' | 'dark-orange' | 'light';
   noticeText: string;
   warningText: string;
   buttonText: string;
@@ -14,6 +15,7 @@ interface KeycloakWarningProps {
 export const KeycloakWarning: React.FC<KeycloakWarningProps> = ({
   logoSrc,
   backgroundVideoSrc,
+  backgroundTheme,
   noticeText,
   warningText,
   buttonText,
