@@ -1,40 +1,34 @@
 {
-  "plugins": [
-    {
-      "name": "@zeplin/cli-connect-react-plugin"
-    },
-    {
-      "name": "@zeplin/cli-connect-storybook-plugin",
-      "config": {
-        "url": "http://localhost:6006/",
-        "format": "new"
-      }
+    "plugins": [
+        {
+            "name": "@zeplin/cli-connect-react-plugin"
+        },
+        {
+            "name": "@zeplin/cli-connect-storybook-plugin",
+            "config": {
+                "url": "http://localhost:6006/",
+                "format": "new"
+            }
+        }
+    ],
+    "styleguides": [
+        "662a7cb7cdce0eb321be4f68"
+    ],
+    "components": [
+        {
+            "path": "src\\components\\image-carousel\\ImageCarousel.stories.tsx",
+            "zeplinIds": [
+                "66e2fa9f481ce8ecc7fadad5"
+            ]
+        },
+        {
+            "path": "src\\components\\image-carousel\\ImageCarouselPaginate.stories.tsx",
+            "zeplinIds": [
+                "66e2fa9ef599c60d0591de10"
+            ]
+        }
+    ],
+    "github": {
+        "repository": "michaelwnau/guardian-portal-storybook"
     }
-  ],
-  "projects": [
-    "669aa99836c7f2ad93ce967a"
-  ],
-  "components": [
-    {
-      "path": "stories\\EventCard.stories.js",
-      "zeplinIds": [
-        "662a85117c9fd0c434378664"
-      ]
-    },
-    {
-      "path": "stories\\EventCard.stories.js",
-      "zeplinIds": [
-        "669ec6166c473213677c01ae"
-      ]
-    },
-    {
-      "path": [],
-      "zeplinIds": [
-        ""
-      ]
-    }
-  ],
-  "github": {
-    "repository": "michaelwnau/guardian-portal-storybook"
-  }
 }
