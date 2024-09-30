@@ -31,7 +31,7 @@ export const WithCustomContent: Story = {
   args: {
     title: 'Beautiful Landscape',
     body: 'Explore nature',
-    backgroundImage: 'https://via.placeholder.com/639x390?text=Landscape',
+    backgroundImage: 'images/space_force_command.jpeg',
     currentPage: 3,
     totalPages: 5,
   },
@@ -50,7 +50,7 @@ export const LastPage: Story = {
   args: {
     title: 'Last Page',
     body: 'This is the last page of the carousel',
-    backgroundImage: 'https://via.placeholder.com/639x390?text=LastPage',
+    backgroundImage: 'images/space_force_fly_over.jpeg',
     currentPage: 7,
     totalPages: 7,
   },
