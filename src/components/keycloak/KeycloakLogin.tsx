@@ -140,7 +140,7 @@ export const KeycloakLogin: React.FC<KeycloakLoginProps> = ({
           variant="outlined"
           onClick={onCreateAccount}
           sx={{
-            color: '#D32F2F',
+            color: 'rgba(255, 255, 255, 0.6)',
             borderColor: '#D32F2F',
             '&:hover': {
               borderColor: '#B71C1C',
@@ -151,10 +151,10 @@ export const KeycloakLogin: React.FC<KeycloakLoginProps> = ({
           Create Account
         </Button>
         <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center', width: '100%' }}>
-          <Link href="#" color="rgba(255, 255, 255, 0.6)" sx={{ mr: 2, fontSize: '0.75rem' }}>
+          <Link href="#" color="#D32F2F" sx={{ mr: 2, fontSize: '0.75rem' }}>
             Terms and Conditions
           </Link>
-          <Link href="#" color="rgba(255, 255, 255, 0.6)" sx={{ fontSize: '0.75rem' }}>
+          <Link href="#" color="#D32F2F" sx={{ fontSize: '0.75rem' }}>
             Privacy Policy
           </Link>
         </Box>
