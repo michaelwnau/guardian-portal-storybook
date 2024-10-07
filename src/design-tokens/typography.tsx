@@ -1,9 +1,3 @@
-/**
- * I've defined two interfaces: FontDefinition to capture the font properties and TypographyToken to represent each typography token object.
-Each typography token is typed with TypographyToken.
-Optional properties like letter_spacing are appropriately included where defined in the original JSON-like structure.
- */
-
 interface FontDefinition {
   family: string
   size: number
